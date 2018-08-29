@@ -1,2 +1,28 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<image src='/images/bg.png' class='bg'></image>
+<view class='hot-card'>
+  <view class='hot-name'>
+    <image src='/images/line-red.png' class='hot-name-line'></image>
+    <view class='hot-name-text'>{{productList[0].name}}</view>
+    <image src='/images/line-red.png' class='hot-name-line'></image>
+  </view>
+  <image src='/images/discount.png' class='hot-info'></image>
+  <image src='{{productList[0].image}}' class='hot-image'></image>
+</view>
+<view class='list-title'>
+  <image src='/images/line-black.png' class='list-title-line'></image>
+  <view class='list-title-text'>春季推荐</view>
+  <image src='/images/line-black.png' class='list-title-line'></image>
+</view>
+
+<view class='product-row' wx:for="{{productList}}" wx:key="id" wx:if='{{index%2 === 1}}'>
+  <navigator class='product-card' wx:for='{{[productList[index], productList[index+1]]}}' wx:key='id' wx:for-index='pindex' wx:for-item='pitem'>
+    <image src='{{pitem.image}}' class='product-image' mode='widthFix'></image>
+    <view class='product-name'>{{pitem.name}}</view>
+    <view class='product-meta'>
+      <view class='product-money'>¥</view>
+      <view class='product-price'>{{pitem.price}}</view>
+      <view class='product-add'>+</view>
+    </view>
+  </navigator>
+</view>
