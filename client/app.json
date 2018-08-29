@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/order/order",
     "pages/user/user",
-    "pages/trolley/trolley"
+    "pages/trolley/trolley",
+    "pages/detail/detail"
   ],
   "tabBar": {
     "list": [

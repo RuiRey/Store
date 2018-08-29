@@ -6,5 +6,31 @@
 	},
 	"appid": "wx9114344a5d068196",
 	"projectname": "store",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "商品详情页面",
+					"pathName": "pages/detail/detail"
+				}
+			]
+		}
+	}
 }
