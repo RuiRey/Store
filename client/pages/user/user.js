@@ -1,66 +1,62 @@
+const app = getApp();
+
 // pages/user/user.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-  
+     userInfo: null,
+    // userInfo:{
+    //   nickName:"Rey",
+    //   avatarUrl:"http://wx1.sinaimg.cn/large/006i487Uly1fejnth3j13j30c80bsjro.jpg"
+    // }
+    authType: app.data.authType,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  },
   
+
+  onTapLogin: function () {
+    app.login({
+      success:({userInfo})=>{
+        this.setData({ 
+          userInfo: userInfo,
+          authType: app.data.authType,
+        });
+      },
+      fail: ()=>{
+        this.setData({ authType: app.data.authType });
+      },
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  onTapAddress: function(){
+    wx.showToast({
+      icon: 'none',
+      title: '此功能暂未开放'
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  onTapKf(){
+    wx.showToast({
+      icon: 'none',
+      title: '此功能暂未开放'
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  onShow: function(){
+    this.setData({ authType: app.data.authType });
+    app.checkSession({
+      success: ({userInfo})=>{
+        this.setData({ userInfo })
+      }
+    });
   }
+
 })

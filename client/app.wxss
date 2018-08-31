@@ -11,3 +11,49 @@ page{
   height: 144rpx;
   z-index: -1;
 }
+
+.unlogin-card{
+  margin: 50rpx 27rpx 0;
+  height: 200rpx;
+  background: white;
+  border-radius: 13rpx;
+  box-shadow: 0 2rpx 13rpx 5rpx rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+}
+.unlogin-head{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  background: #f5e069;
+  margin-left: 53rpx;
+  flex-shrink: 0;
+}
+.unlogin-info{
+  flex: 1;
+  margin-left: 31rpx;
+}
+.unlogin-text{
+  font-size: 34rpx;
+  line-height: 48rpx;
+  font-weight: bold;
+  color: rgba(29, 29, 38, 0.8);
+}
+.unlogin-tips{
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  line-height: 33rpx;
+  color: #8b8b8b;
+}
+.unlogin-btn{
+  margin: 34rpx auto 0;
+  width: 250rpx;
+  height: 80rpx;
+  background: #f5e069;
+  color: #34373d;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+}
