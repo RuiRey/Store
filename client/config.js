@@ -31,6 +31,15 @@ var config = {
 
       // 拉取用户信息
       user: `${host}/weapp/user`,
+
+      // 创建订单
+      addOrder: `${host}/weapp/order`,
+
+      // 添加到购物车商品列表
+      addTrolley: `${host}/weapp/trolley`,
+
+      // 获取已购买的订单列表
+      orderList: `${host}/weapp/order`,
       
     }
 };

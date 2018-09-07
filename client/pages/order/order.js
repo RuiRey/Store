@@ -10,14 +10,46 @@ Page({
    */
   data: {
     userInfo: null,
-    authType: app.data.authType
+    authType: app.data.authType,
+    orderList: [], // 订单列表
+  },
+
+  getOrder(){
+    wx.showLoading({
+      title: '刷新数据订单...',
+    })
+
+    qcloud.request({
+      url: config.service.orderList,
+      login: true,
+      success: result => {
+        wx.hideLoading()
+        let data = result.data;
+        if(!data.code){
+          this.setData({orderList: data.data});
+        }else{
+          wx.showToast({
+            icon: 'none',
+            title: '刷新订单数据失败',
+          })
+        }
+      },
+      fail: ()=>{
+        wx.hideLoading();
+        wx.showToast({
+          icon: 'none',
+          title: '刷新订单数据失败',
+        })
+      },
+    })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getOrder();
   },
 
   onTapLogin: function () {
@@ -42,6 +74,7 @@ Page({
     app.checkSession({
       success: ({ userInfo }) => {
         this.setData({ userInfo })
+        this.getOrder();
       }
     });
   },

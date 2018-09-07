@@ -23,7 +23,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -42,6 +42,11 @@
 					"name": "购物车",
 					"pathName": "pages/trolley/trolley",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order"
 				}
 			]
 		}

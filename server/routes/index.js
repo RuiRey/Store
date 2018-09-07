@@ -38,4 +38,11 @@ router.get('/product', controllers.product.list)
 //获取商品详情
 router.get("/product/:id", controllers.product.detail)
 
+// 创建订单
+router.post('/order', validationMiddleware, controllers.order.add)
+
+// 显示已购买订单
+router.get('/order', validationMiddleware, controllers.order.list)
+
+
 module.exports = router
