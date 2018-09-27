@@ -33,6 +33,6 @@
 </view>
 
 <view class='opr-cnt'>
-  <view class='opt-trolley'>加入购物车</view>
+  <view class='opt-trolley' bindtap='addToTrolley'>加入购物车</view>
   <view class='opt-buy' bindtap='buy'>立即购买</view>
 </view>

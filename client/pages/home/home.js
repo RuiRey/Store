@@ -1,4 +1,4 @@
-const qcloud = require('../../vendor/wafer2-client-sdk/index');
+const qcloud = require('../../vendor/wafer2-client-sdk/index.js');
 const config = require('../../config.js');
 
 // pages/home/home.js
@@ -44,6 +44,40 @@ Page({
         });
       }
     });
+  },
+
+  addToTrolley(event){
+    let productId = event.currentTarget.dataset.id;
+    
+    if (productId) {
+      qcloud.request({
+        url: config.service.addTrolley,
+        login: true,
+        method: 'PUT',
+        data: {
+          id: productId
+        },
+        success: result => {
+          let data = result.data
+          if (!data.code) {
+            wx.showToast({
+              title: '已添加到购物车',
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: '添加到购物车失败',
+            })
+          }
+        },
+        fail: () => {
+          wx.showToast({
+            icon: 'none',
+            title: '添加到购物车失败',
+          })
+        }
+      })
+    }
   },
 
   /**
